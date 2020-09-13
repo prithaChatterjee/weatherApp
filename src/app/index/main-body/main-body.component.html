@@ -1,0 +1,68 @@
+<ul [class.darkmodebg] = 'isDarkModeOn'>
+  <li *ngIf="screen >=768px">
+    <button type="button" [style.opacity]="backdisabled ? '0.5' : '1'" [disabled]="backdisabled"  (click) = "minusDivs(goNext,goBack)">
+      <div class="arrow-left" ></div>
+
+    </button>
+  </li>
+  
+  <li *ngFor="let city of showCities">
+
+    <mat-card class="example-card" [ngStyle] = "darkMode">
+      <header>{{city.country}}</header>
+      <mat-card-content>
+        <div>
+          <img [src]="city.imgType()" alt="">
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <h4>20</h4>
+        <p>{{city.weather}}</p>
+        <div>
+          <div class="arrow_drop_down">
+            <button mat-button (click)="decremntTem(this.cities.indexOf(city))">
+              <span class="material-icons">
+                arrow_drop_down
+              </span>
+            </button>
+            <h4 [style.color]= "isDarkModeOn? 'white' : 'black'">28</h4>
+            <p>Min</p>
+          </div>
+          <div class="arrow_drop_up">
+            <button mat-button (click)="increTem(this.cities.indexOf(city))">
+              <span class="material-icons">
+                arrow_drop_up
+              </span>
+            </button>
+            <h4 [style.color]= "isDarkModeOn? 'white' : 'black'">{{city.temparature}}</h4>
+            <p>Max</p>
+
+          </div>
+
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </li>
+
+  <li>
+
+    <mat-card class="example-card " [ngStyle] = "darkMode">
+      <header>ADD City</header>
+      <mat-card-content >
+        <button class="add_city_button" [style.opacity] = "isDarkModeOn ? 0.3: 1" mat-button (click)="openDialog()">
+          <span class="material-icons add_city_icon" style="font: 100px !important;">
+            add
+            </span>
+        </button>
+          <img [src]="isDarkModeOn ? '../../../assets/darkCity.png': '../../../assets/add_city-removebg-preview.png' " class="add_city" alt="">
+      </mat-card-content>
+    </mat-card>
+  </li>
+
+  <li class="next" *ngIf="screen >=768px">
+    <button type="button" [style.opacity]="nextdisabled ? '0.5' : '1'" [disabled]="nextdisabled" (click) = "plusDivs(goBack,this.cities)">
+      <div class="arrow-right" ></div>
+    </button>
+  </li>
+
+</ul>

@@ -1,0 +1,72 @@
+
+$background-color: white !important;
+$margin : -24px;
+@mixin style ($color,$poisition){
+    background-color: $color;
+    margin-left: $poisition;
+    margin-right: $poisition;
+}
+    .dialog{
+        color: black !important;
+        // margin: $margin;
+        h1{
+            @include style($background-color, $margin);
+            margin-top: $margin;
+            margin-bottom: auto;
+            // background-color: $background-color;
+            text-align: center;
+            padding-top: 24px;
+        }
+        form{
+        margin: 0 $margin;
+        background-color: $background-color;
+        div{
+            margin: 0 30px;
+            label{
+                text-transform: uppercase;
+            }
+        }
+        }
+        .mat-dialog-actions{
+            @include style($background-color, $margin );
+            justify-content: space-between;
+            button{
+                margin : 0 30px;
+                width: 150px;
+                height: 25px;
+                outline: none;
+                border: none;
+                background-color: #00FF9B;
+                border-radius: 15px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                transition: transform 0.5s ease-in-out;
+                &:hover {
+                    -ms-transform: scale(2); /* IE 9 */
+                     transform: scale(1.2);
+                }
+            }
+        }
+    }
+.mat-dialog-container{
+    padding: 0 !important;
+    overflow: visible !important;
+    h1{
+        margin: 0px ;
+    }
+    .mat-dialog-actions{
+        margin: $margin;
+    }
+}
+
+input[type=text],input[type=Number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

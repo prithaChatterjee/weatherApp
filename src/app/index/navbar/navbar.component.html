@@ -1,0 +1,27 @@
+
+<header>
+  <div class="flex-container" [class.dark]="isChecked">
+    <div class="side-nav">
+
+        <button type="button" (click)="toggle()" [style.color]="isChecked? 'white' : 'black'" mat-button class="material-icons example-sidenav-content" >
+          menu
+       </button>
+      
+        <!-- <div class="triangle"></div>
+        <div>Minimis</div> -->
+        <div>
+          <img class="logo" src="../../../assets/1_zkVYzjGU4YgjDJUYzs-5hg@2x.png" alt="">
+        </div>
+    </div>
+    <div> Today</div>
+    <div >
+        <span>light</span> 
+        <mat-slide-toggle #mode (change)= 'darkMode(mode)'></mat-slide-toggle>
+        <span>dark</span>
+    </div>
+  </div>
+</header>
+
+
+
+  

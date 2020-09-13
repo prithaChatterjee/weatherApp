@@ -1,0 +1,36 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Dialog with elements</h1>
+    <div mat-dialog-content>
+        <form #addCity="ngForm">
+            <div>
+
+                <label for="country">Country</label>
+                <select id="country" required name="country" [(ngModel)]="newCity.country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="temparature">temparature</label>
+                <input type="number" required id="temparature" name="temparature" placeholder="temparature"
+                    [(ngModel)]="newCity.temparature">
+
+                <label for="weather">weather</label>
+                <input type="text" required id="weather" name="weather" placeholder="weather" [(ngModel)]="newCity.weather">
+
+            </div>
+        </form>
+    </div>
+    <div mat-dialog-actions style="padding: 0 -24px">
+        <button mat-button [mat-dialog-close]="newCity" type="submit">
+            <span class="material-icons">
+                sentiment_satisfied_alt
+            </span>
+            submit</button>
+        <button mat-button mat-dialog-close>
+            <span class="material-icons">
+                clear
+            </span>close</button>
+    </div>
+
+</div>
